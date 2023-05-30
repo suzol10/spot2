@@ -12,6 +12,7 @@ use Spot\Entity\Collection;
  *
  * @package Spot
  */
+#[AllowDynamicProperties]
 class HasManyThrough extends RelationAbstract implements \Countable, \IteratorAggregate, \ArrayAccess
 {
     protected $throughCollection;
