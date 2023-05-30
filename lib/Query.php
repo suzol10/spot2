@@ -562,8 +562,7 @@ class Query implements \Countable, \IteratorAggregate, \ArrayAccess, \JsonSerial
      *
      * @return int
      */
-    #[\ReturnTypeWillChange]
-    public function count()
+    public function count() :int
     {
         $countCopy = clone $this->builder();
         $stmt = $countCopy->select('COUNT(*)')->resetQueryPart('orderBy')->execute();

@@ -6,7 +6,7 @@ use Doctrine\DBAL;
 /**
  * @package Spot
  */
-class Config implements \Serializable
+class Config
 {
     protected $_defaultConnection;
     protected $_connections = [];
