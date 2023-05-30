@@ -1,6 +1,7 @@
 <?php
 namespace Spot\Relation;
 
+use ReturnTypeWillChange;
 use Spot\Mapper;
 use Spot\Entity;
 use Spot\EntityInterface;
@@ -178,6 +179,7 @@ class HasManyThrough extends RelationAbstract implements \Countable, \IteratorAg
      *
      * @return integer
      */
+    #[ReturnTypeWillChange]
     public function count()
     {
         if ($this->result === null) {
@@ -194,6 +196,7 @@ class HasManyThrough extends RelationAbstract implements \Countable, \IteratorAg
      *
      * @return \Spot\Entity\Collection
      */
+    #[ReturnTypeWillChange]
     public function getIterator()
     {
         // Load related records for current row
@@ -204,6 +207,7 @@ class HasManyThrough extends RelationAbstract implements \Countable, \IteratorAg
 
     // SPL - ArrayAccess functions
     // ----------------------------------------------
+    #[ReturnTypeWillChange]
     public function offsetExists($key)
     {
         $this->execute();
@@ -211,6 +215,7 @@ class HasManyThrough extends RelationAbstract implements \Countable, \IteratorAg
         return isset($this->result[$key]);
     }
 
+    #[ReturnTypeWillChange]
     public function offsetGet($key)
     {
         $this->execute();
@@ -218,6 +223,7 @@ class HasManyThrough extends RelationAbstract implements \Countable, \IteratorAg
         return $this->result[$key];
     }
 
+    #[ReturnTypeWillChange]
     public function offsetSet($key, $value)
     {
         $this->execute();
@@ -229,6 +235,7 @@ class HasManyThrough extends RelationAbstract implements \Countable, \IteratorAg
         }
     }
 
+    #[ReturnTypeWillChange]
     public function offsetUnset($key)
     {
         $this->execute();

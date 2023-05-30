@@ -1,6 +1,7 @@
 <?php
 namespace Spot\Relation;
 
+use ReturnTypeWillChange;
 use Spot\Mapper;
 use Spot\EntityInterface;
 use Spot\Entity\Collection;
@@ -129,6 +130,7 @@ class HasOne extends RelationAbstract implements \ArrayAccess
 
     // SPL - ArrayAccess functions
     // ----------------------------------------------
+    #[ReturnTypeWillChange]
     public function offsetExists($key)
     {
         $entity = $this->execute();
@@ -136,6 +138,7 @@ class HasOne extends RelationAbstract implements \ArrayAccess
         return isset($entity->$key);
     }
 
+    #[ReturnTypeWillChange]
     public function offsetGet($key)
     {
         $entity = $this->execute();
@@ -143,6 +146,7 @@ class HasOne extends RelationAbstract implements \ArrayAccess
         return $entity->$key;
     }
 
+    #[ReturnTypeWillChange]
     public function offsetSet($key, $value)
     {
         $entity = $this->execute();
@@ -154,6 +158,7 @@ class HasOne extends RelationAbstract implements \ArrayAccess
         }
     }
 
+    #[ReturnTypeWillChange]
     public function offsetUnset($key)
     {
         $entity = $this->execute();
